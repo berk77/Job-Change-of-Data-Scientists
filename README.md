@@ -1,6 +1,6 @@
 # HR Analytics: Job Change of Data Scientists
 
-This dataset is designed to understand the factors that lead a person will work for the company(leaving a current job), and the goal of this task is to build a model that uses the current credentials, demographics, experience to predict the probability of a candidate looking for a new job or will work for the company.
+This dataset is designed to understand the factors that cause a person to want to work for the company. The goal of this project is to build a model that uses existing credentials, demographics, and experience to predict a candidate's likelihood of working for the company.
 
 ## Data
 
@@ -32,13 +32,13 @@ This dataset is designed to understand the factors that lead a person will work 
 
 ## Preprocessing data
 
-Since the education_level property is an ordinal category, I implemented an appropriate method for it. To make the difference between the categories more obvious, I increased the difference between them numerically. Likewise, in the company_size property, I created the categories by calculating the average values. Apart from these, I made some replacement operation and data type corrections.
+Since the education_level property is an ordered category, the difference between the categories has been increased numerically to make the difference between the categories more obvious. Likewise, categories were created by calculating average values in the company_size property. Apart from these, some modifications and data type corrections were made.
 
-In order to prevent data leakage, encoding categorical variable operations are done after data is separated as train and test data. First of all, the LeaveOneOutEncoder method was used here because the city variable is a high cardinality categorical variable. Then, the OneHotEncoder method was used, as variables such as gender, enrolled_university, major_discipline, company_type were nominal variables.
+In order to prevent data leakage, categorical variable encoding is done after the data is separated as train and test. The LeaveOneOutEncoder method was used because the city variable is a categorical variable with high cardinality. Then, the OneHotEncoder method is used, as variables such as gender, enrolled_university, major_discipline, company_type are nominal variables.
 
 ## Handling imbalanced dataset
 
-I used the SMOTEENN method to solve the Imbalanced dataset issue. SMOTE can generate noisy samples by interpolating new points between marginal outliers and inliers. This issue can be solved by cleaning the space resulting from over-sampling. We can do this by using the SMOTEENN method.
+The SMOTEENN method, which combines oversampling and undersampling, is used to overcome the problem of imbalanced data.
 
 ## Result
 
